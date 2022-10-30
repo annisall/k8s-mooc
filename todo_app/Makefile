@@ -1,11 +1,11 @@
 build:
-	docker build . -t todo_app
+	docker build . -t todo_app:$(VERSION)
 
 run:
-	docker run --name todo_app -d todo_app
+	docker run --name todo_app -d todo_app:$(VERSION)
 
-build_and_run: build \
-	run
+build_and_run: build $(VERSION)\
+	run $(VERSION)
 
 logs:
 	docker logs todo_app
