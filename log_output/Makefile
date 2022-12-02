@@ -1,8 +1,8 @@
 build:
-	docker build . -t log_output
+	docker build . -t log_output:$(VERSION)
 
 run:
-	docker run --name log_output -d log_output
+	docker run -p 8088:5000 --name log_output -d log_output:$(VERSION)
 
 logs:
 	docker logs log_output

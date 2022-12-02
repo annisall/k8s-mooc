@@ -1,8 +1,4 @@
-from typing import Union
-
 from fastapi import FastAPI
-import uvicorn
-import os
 from . import logger
 
 app = FastAPI()

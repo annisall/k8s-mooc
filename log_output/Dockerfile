@@ -1,11 +1,13 @@
 FROM python:3.9
 
-WORKDIR /usr/src/app
+WORKDIR /code
 
-COPY ./requirements.txt .
+COPY ./requirements.txt ./requirements.txt
 
 COPY ./src .
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "./main.py"]
+EXPOSE 5000
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
