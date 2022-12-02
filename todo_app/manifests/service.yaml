@@ -7,8 +7,6 @@ spec:
   selector:
     app: todo-app
   ports:
-    - name: http
-      nodePort: 30080
+    - port: 2345
       protocol: TCP
-      port: 5678
       targetPort: 5000
