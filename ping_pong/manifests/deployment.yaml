@@ -14,4 +14,8 @@ spec:
     spec:
       containers:
         - name: ping-pong
-          image: anniinasalli/pingpong:0.2
+          image: anniinasalli/pingpong:0.3
+          ports:
+            - name: http
+              containerPort: 5000
+              protocol: TCP
